@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Joe's 5-and-5 | Sequence</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body ng-controller="mainCtrl" ng-cloak>
+	<header>
+		<h1 ng-click="showHome()" ng-class="{small: selectionMade()}">Joe's 5-and-5-and-font</h1>
+	</header>
+	<nav ng-class="{universal: showFont}">
+		<h2 ng-click="showFontSection()" ng-hide="noFont" ng-class="{focus: showingFontSec}">FONT</h2>
+		<h2 ng-click="showStrengthSection()" ng-hide="noStrength" ng-class="{focus: showingStrengthSec}">STRENGTHS</h2>
+		<h2 ng-click="showLieSection()" ng-hide="noLies" ng-class="{focus: showingLieSec}">LIES</h2>
+	</nav>
+
+	<section class="font-section" ng-show="showingFontSec">
+		<h3>Attributes</h3>
+		<div class="next-btn" ng-click="nextAttr()"></div>
+		<div class="attr-list">
+			<h4 ng-show="fontOne">rational</h4>
+			<h4 ng-show="fontTwo">understated</h4>
+			<h4 ng-show="fontThree">progressive</h4>
+			<h4 ng-show="fontFour">relaxed</h4>
+		</div>
+		<h3 class="font-title" ng-show="fontFive" ng-click="setFont()">universal</h3>
+	</section>
+
+	<section class="strength-section" ng-show="showingStrengthSec">
+		<ol>
+			<li ng-click="showAchiv = !showAchiv">Achiever</li>
+			<div class="descr" ng-show="showAchiv">
+				...have a great deal of stamina and work hard. They take great satisfaction from being busy and productive.
+			</div>
+
+			<li ng-click="showRelator = !showRelator">Relator</li>
+			<div class="descr" ng-show="showRelator">
+				...enjoy close relationships with others. They find deep satisfaction in working hard with friends to achieve a goal.
+			</div>
+
+			<li ng-click="showCompet = !showCompet">Competitor</li>
+			<div class="descr" ng-show="showCompet">
+				...measure their progress against the performance of others. They strive to win first place and revel in contests.
+			</div>
+
+			<li ng-click="showLearn = !showLearn">Learner</li>
+			<div class="descr" ng-show="showLearn">
+				...have a great desire to learn and want to continuously improve. In particular, the process of learning, rather than the outcome, excites them.
+			</div>
+
+			<li ng-click="showHarmony = !showHarmony">Harmony</li>
+			<div class="descr" ng-show="showHarmony">
+				...look for consensus. They don’t enjoy conflict; rather, they seek areas of agreement. 
+			</div>
+		</ol>
+	</section>
+
+	<section class="lies-section" ng-show="showingLieSec">
+		<div class="lie-box" ng-click="answer1=true">
+			Caddied at a PGA Tour event
+			<div class="answer" ng-show="answer1">
+				<span>true</span>
+			</div>
+		</div>
+		<div class="lie-box" ng-click="answer2=true">
+			Opened a show at The Fillmore
+			<div class="answer false" ng-show="answer2">
+				<span>false</span>
+			</div>
+		</div>
+		<div class="lie-box" ng-click="answer3=true">
+			Climbed a Yosemite wall
+			<div class="answer" ng-show="answer3">
+				<span>true</span>
+			</div>
+		</div>
+		<div class="lie-box" ng-click="answer4=true">
+			Home computer is a Windows PC
+			<div class="answer" ng-show="answer4">
+				<span>true</span>
+			</div>
+		</div>
+		<div class="lie-box" ng-click="answer5=true">
+			Have won a blue ribbon at a cooking competition
+			<div class="answer" ng-show="answer5">
+				<span>true</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- TYPEKIT -->
+	<script src="//use.typekit.net/ign4ocx.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+
+	<!-- SCRIPTS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+	<script src="/main.js"></script>
+</body>
+</html>
